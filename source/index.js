@@ -16,19 +16,25 @@ do{
     scelta=input(":");
 
     switch(scelta){
-        case 1:{
+        case '1':{
+            nome=input("Dai un nome al promemoria: ");
+            ora=input("A che ora devo ricordartelo? ")
+            stato=false;
+
+            promemoria.push(f.CreaPromemoria(nome,ora,stato));
+            
+            console.log(promemoria);//stampa grezza per verificare il corretto funzionamento
+            break;
+        }
+        case '2':{
 
             break;
         }
-        case 2:{
+        case '3':{
 
             break;
         }
-        case 3:{
-
-            break;
-        }
-        case 4:{
+        case '4':{
 
             break;
         }
