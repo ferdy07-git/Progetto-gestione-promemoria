@@ -9,10 +9,10 @@ const input=promptSync();
 let promemoria=[];
 let nome,ora,stato;
 
-let scelta;
+let scelta,sceltaVis;
 do{
     console.log("Menù: ");
-    console.log("1)Crea promemoria\n2)Visualizza promemoria\n3)Modifica promemoria\n4)Rimuovi promemoria\n0)Esci");
+    console.log("1)Crea promemoria\n2)Visualizza promemoria\n3)Modifica promemoria\n4)Rimuovi promemoria\n5)Completa attività\n0)Esci");
     scelta=input(":");
 
     switch(scelta){
@@ -27,7 +27,7 @@ do{
             break;
         }
         case '2':{
-
+            
             break;
         }
         case '3':{
@@ -35,6 +35,10 @@ do{
             break;
         }
         case '4':{
+
+            break;
+        }
+        case '5':{
 
             break;
         }
