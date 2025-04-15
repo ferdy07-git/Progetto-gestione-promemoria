@@ -12,22 +12,26 @@ let nome,ora,stato;
 let scelta,sceltaVis;
 do{
     console.log("Menù: ");
-    console.log("1)Crea promemoria\n2)Visualizza promemoria\n3)Modifica promemoria\n4)Rimuovi promemoria\n5)Completa attività\n0)Esci");
+    console.log("1)Crea promemoria\n2)Visualizza promemoria\n3)Ricerca promemoria\n4)Modifica promemoria\n5)Rimuovi promemoria\n6)Completa attività\n0)Esci");
     scelta=input(":");
 
     switch(scelta){
         case '1':{
+            console.log("\n");
             nome=input("Dai un nome al promemoria: ");
             ora=input("A che ora devo ricordartelo? ")
             stato=false;
 
             promemoria.push(f.CreaPromemoria(nome,ora,stato));
-            
-            console.log(promemoria);//stampa grezza per verificare il corretto funzionamento
+
+            console.log("\n");
+
             break;
         }
         case '2':{
-            
+            console.log("\n");
+            f.VisualizzaPromemoria(promemoria);
+            console.log("\n");
             break;
         }
         case '3':{
@@ -39,6 +43,10 @@ do{
             break;
         }
         case '5':{
+
+            break;
+        }
+        case '6':{
 
             break;
         }
