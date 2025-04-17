@@ -9,6 +9,7 @@ const input=promptSync();
 let promemoria=[];
 let nome,ora,stato;
 let i;
+let trovato=false;
 
 let scelta;
 do{
@@ -45,14 +46,30 @@ do{
             let n_mod;
             console.log("Che promemoria vuoi modificare? ");
             nome=input("nome promemoria: ");
-            n_mod=input("Dai un nome al promemoria: ");
-            ora=input("A che ora devo ricordartelo? ");
-            f.ModificaPromemoria(nome,promemoria,n_mod,ora);
-            console.log("Promemoria modificato con successo!");
+
+            promemoria.forEach(x => {
+                if(x.nome===nome){
+                    trovato=true;
+                }
+            });
+
+            if(trovato){
+                n_mod=input("Dai un nome al promemoria: ");
+                ora=input("A che ora devo ricordartelo? ");
+                f.ModificaPromemoria(nome,promemoria,n_mod,ora);
+                console.log("Promemoria modificato con successo!");
+
+                console.log("\n");
+                f.VisualizzaPromemoria(promemoria);
+            }
+            else{
+                console.log("\nPromemoria non trovato. Riprova!");
+            }
+            trovato=false;
             break;
         }
         case '5':{
-
+            
             break;
         }
         case '6':{
