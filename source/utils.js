@@ -32,5 +32,15 @@ export function RicercaPromemoria(promemoria,n){
             console.log(`Stato: Non completato`);
         }
         }
+        console.log('\n');
+    });
+}
+
+export function ModificaPromemoria(n,promemoria,n_mod,o){
+    promemoria.forEach(x => {
+        if(x.nome===n){
+            x.nome=n_mod,
+            x.ora=o;
+        }
     });
 }
