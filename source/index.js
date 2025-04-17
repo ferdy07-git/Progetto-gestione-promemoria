@@ -69,7 +69,35 @@ do{
             break;
         }
         case '5':{
-            
+            let conferma;
+            console.log("Che promemoria vuoi eliminare?");
+            nome=input("nome promemoria:");
+
+            promemoria.forEach(x => {
+                if(x.nome===nome){
+                    trovato=true;
+                }
+            });
+
+            if(trovato){
+                console.log("\nSei sicuro di voler eliminare questo promemoria?");
+                conferma=input("si/no: ");
+
+                if(conferma === 'si'){
+                    f.RimuoviPromemoria(nome,promemoria);
+                    console.log("Promemoria rimosso con successo!");
+                    console.log("\n");
+                    f.VisualizzaPromemoria(promemoria);
+                }
+                else if(conferma === 'no'){
+                    console.log("Procedura di rimozione annullata");
+                }
+            }
+            else{
+                console.log("\nPromemoria non trovato. Riprova!");
+            }
+            trovato=false;
+
             break;
         }
         case '6':{
