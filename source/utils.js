@@ -44,3 +44,11 @@ export function ModificaPromemoria(n,promemoria,n_mod,o){
         }
     });
 }
+
+export function RimuoviPromemoria(n, promemoria) {
+    for (let i = promemoria.length - 1; i >= 0; i--) {
+        if (promemoria[i].nome === n) {
+            promemoria.splice(i, 1);
+        }
+    }
+}
