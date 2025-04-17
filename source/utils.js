@@ -18,6 +18,7 @@ export function VisualizzaPromemoria(promemoria){
         }else{
             console.log(`Stato: Non completato`);
         }
+        console.log("\n");
     });
 }
 
@@ -51,4 +52,12 @@ export function RimuoviPromemoria(n, promemoria) {
             promemoria.splice(i, 1);
         }
     }
+}
+
+export function CompletaAttivita(n,promemoria){
+    promemoria.forEach(x => {
+        if(x.nome===n){
+            x.stato=true;
+        }
+    });
 }
