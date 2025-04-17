@@ -31,8 +31,23 @@ do{
             break;
         }
         case '2':{
+            let ris,filtra;
             f.VisualizzaPromemoria(promemoria);
             console.log("\n");
+            
+            console.log("Vuoi filtrare i promemoria?");
+            ris=input("si/no: ");
+
+            if(ris === 'si'){
+                console.log("Per cosa vuoi filtrare?\n 1)Nome\n2)Orario\n3)Stato");
+                filtra=input(":");
+                console.log("\n");
+                f.FiltraPromemoria(promemoria,filtra);
+            }
+            else if(ris === 'no'){
+                break;
+            }
+
             break;
         }
         case '3':{
