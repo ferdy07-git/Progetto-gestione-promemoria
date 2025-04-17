@@ -101,6 +101,23 @@ do{
             break;
         }
         case '6':{
+            console.log("Quale attività vuoi completare?");
+            nome=input("nome promemoria:");
+
+            promemoria.forEach(x => {
+                if(x.nome===nome){
+                    trovato=true;
+                }
+            });
+
+            if(trovato){
+                f.CompletaAttivita(nome,promemoria);
+                console.log("Attività completata!")
+            }
+            else{
+                console.log("\nPromemoria non trovato. Riprova!");
+            }
+            trovato=false;
 
             break;
         }
