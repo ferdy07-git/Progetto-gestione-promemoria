@@ -9,6 +9,10 @@ export function CreaPromemoria(n,o,s){
     return nuovoPromemoria;
 }
 
+export function ControllaDuplicato(promemoria, nome) {
+    return promemoria.some(p => p.nome === nome);
+}
+
 export function VisualizzaPromemoria(promemoria){
     promemoria.forEach(x => {
         console.log(`Nome promemoria: ${x.nome}`);
@@ -32,7 +36,7 @@ export function FiltraPromemoria(promemoria, filtra) {
             promemoria.sort((a, b) => {
                 const orarioA = a.ora.split(':');
                 const orarioB = b.ora.split(':');
-                
+            
                 const oraA = parseInt(orarioA[0]);
                 const oraB = parseInt(orarioB[0]);
                 
