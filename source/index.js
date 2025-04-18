@@ -20,12 +20,28 @@ do{
 
     switch(scelta){
         case '1':{
+            let ris,n_rin;
             nome=input("Dai un nome al promemoria: ");
             ora=input("A che ora devo ricordartelo? ");
             stato=false;
 
-            promemoria.push(f.CreaPromemoria(nome,ora,stato));
+            if (!f.ControllaDuplicato(promemoria, nome)) {
+                promemoria.push(f.CreaPromemoria(nome,ora,stato));
+            } else {
+                console.log("Promemoria con questo nome già esistente!");
+                console.log("Vuoi rinominarlo?");
+                ris=input("si/no: ");
 
+                if(ris === "si"){
+                    n_rin=input("Dai un nome al promemoria: ");
+                    promemoria.push(f.CreaPromemoria(n_rin,ora,stato));
+                }
+                else if(ris === "no"){
+                    console.log("Il promemoria non è stato creato perchè è duplicato.")
+                }
+
+            }
+        
             console.log("\n");
 
             break;
