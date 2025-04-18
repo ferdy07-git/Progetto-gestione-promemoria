@@ -1,14 +1,37 @@
 "use strict"
 
+/**
+ * @author De Angelis Ferdinando <ferdydeangeliss@gmail.com>
+ */
+
+/**
+ * Importa le funzioni dal file utilis.js
+ * @module utils
+ */
 import * as f from './utils.js'
 
+/**
+ * Importa il modulo prompt-sync per l'input dell'utente
+ * @module prompt-sync 
+ */
 import promptSync from 'prompt-sync'
 
 const input=promptSync();
 
+/**
+ * Array che contiene i promemoria
+ * @type {Array<Object>}
+ */
 let promemoria=[];
+
+/**
+ * Proprietà dell'oggetto promemoria
+ * @type {string} 
+ * @type {Number} 
+ * @type {boolean}
+ */
 let nome,ora,stato;
-let i;
+
 let trovato=false;
 
 let scelta;
@@ -25,21 +48,29 @@ do{
             ora=input("A che ora devo ricordartelo? ");
             stato=false;
 
+            /**
+             * Controlla se il promemoria creato è già presente nell'array
+             */
             if (!f.ControllaDuplicato(promemoria, nome)) {
                 promemoria.push(f.CreaPromemoria(nome,ora,stato));
             } else {
+                /**
+                 * Chiede all'utente se vuole rinominarlo
+                 */
                 console.log("Promemoria con questo nome già esistente!");
                 console.log("Vuoi rinominarlo?");
                 ris=input("si/no: ");
 
                 if(ris === "si"){
+                    /**
+                     * Crea il promemoria con il nuovo nome
+                     */
                     n_rin=input("Dai un nome al promemoria: ");
                     promemoria.push(f.CreaPromemoria(n_rin,ora,stato));
                 }
                 else if(ris === "no"){
                     console.log("Il promemoria non è stato creato perchè è duplicato.")
                 }
-
             }
         
             console.log("\n");
