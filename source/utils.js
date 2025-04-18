@@ -1,6 +1,10 @@
 "use strict"
 
 /**
+ * @author De Angelis Ferdinando <ferdydeangeliss@gmail.com>
+ */
+
+/**
  * Crea un promemoria
  * @param {string} n - nome promemoria
  * @param {Number} o - orario promemoria
